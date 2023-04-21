@@ -27,7 +27,6 @@ RUN git clone -b v1.9 https://github.com/camenduru/sd-civitai-browser /content/s
 RUN git clone -b v1.9 https://github.com/camenduru/sd-webui-additional-networks /content/stable-diffusion-webui/extensions/sd-webui-additional-networks
 RUN git clone -b v1.9 https://github.com/camenduru/sd-webui-tunnels /content/stable-diffusion-webui/extensions/sd-webui-tunnels
 RUN git clone -b v1.9 https://github.com/camenduru/batchlinks-webui /content/stable-diffusion-webui/extensions/batchlinks-webui
-RUN git clone -b https://github.com/VinsonLaro/stable-diffusion-webui-chinese /content/stable-diffusion-webui/extensions/stable-diffusion-webui-chinese
 ADD --chown=user https://github.com/VinsonLaro/stable-diffusion-webui-chinese/chinese-all-0408.json /content/stable-diffusion-webui/localizations/chinese-all-0408.json
 ADD --chown=user https://github.com/VinsonLaro/stable-diffusion-webui-chinese/chinese-english-0408.json /content/stable-diffusion-webui/localizations/chinese-english-0408.json
 RUN cd stable-diffusion-webui && git reset --hard
