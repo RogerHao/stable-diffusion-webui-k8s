@@ -12,6 +12,7 @@ USER user
 
 # ADD PATH
 RUN echo "export PATH=$PATH:/home/user/.local/bin" >> ~/.bashrc
+RUN echo "export PATH=$PATH:/user/.local/bin" >> ~/.bashrc
 
 RUN pip3 install --upgrade pip
 RUN pip install xformers==0.0.16
