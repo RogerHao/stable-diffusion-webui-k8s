@@ -10,6 +10,9 @@ RUN mkdir /content && chown -R user:user /content
 WORKDIR /content
 USER user
 
+# ADD PATH
+RUN export PATH="$PATH:/home/user/.local/bin"; echo $PATH
+
 RUN pip3 install --upgrade pip
 RUN pip install xformers==0.0.16
 RUN pip install --pre triton
