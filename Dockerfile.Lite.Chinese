@@ -11,7 +11,7 @@ WORKDIR /content
 USER user
 
 RUN pip3 install --upgrade pip
-RUN pip install xformers==0.0.16rc396
+RUN pip install xformers==0.0.16
 RUN pip install --pre triton
 RUN pip install numexpr
 
