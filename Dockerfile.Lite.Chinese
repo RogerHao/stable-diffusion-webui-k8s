@@ -2,6 +2,7 @@
 
 FROM nvidia/cuda:11.8.0-base-ubuntu22.04
 ENV DEBIAN_FRONTEND noninteractive
+ENV PATH="$PATH:/home/user/.local/bin:/{$HOME}/user/.local/bin:/.local/bin:"
 
 RUN apt-get update -y && apt-get upgrade -y && apt-get install -y libgl1 libglib2.0-0 wget git git-lfs python3-pip python-is-python3 && rm -rf /var/lib/apt/lists/*
 
@@ -9,9 +10,6 @@ RUN adduser --disabled-password --gecos '' user
 RUN mkdir /content && chown -R user:user /content
 WORKDIR /content
 USER user
-
-# ADD PATH
-RUN echo "export PATH=$PATH:/home/user/.local/bin:/content/home/user/.local/bin:/content/user/.local/bin" >> ~/.bashrc
 
 RUN pip3 install --upgrade pip
 RUN pip install xformers==0.0.16
