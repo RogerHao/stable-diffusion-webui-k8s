@@ -11,7 +11,7 @@ WORKDIR /content
 USER user
 
 # ADD PATH
-RUN export PATH="$PATH:/home/user/.local/bin"; echo $PATH
+RUN echo "export PATH=$PATH:/home/user/.local/bin" >> ~/.bashrc
 
 RUN pip3 install --upgrade pip
 RUN pip install xformers==0.0.16
