@@ -37,7 +37,7 @@ RUN sed -i -e 's/    start()/    #start()/g' /content/stable-diffusion-webui/lau
 # not resinstall xformers
 RUN cd stable-diffusion-webui && python launch.py --skip-torch-cuda-test
 
-COPY --chown=user https://huggingface.co/ckpt/sd15/resolve/main/v1-5-pruned-emaonly.ckpt /content/stable-diffusion-webui/models/Stable-diffusion/v1-5-pruned-emaonly.ckpt
+ADD --chown=user https://huggingface.co/ckpt/sd15/resolve/main/v1-5-pruned-emaonly.ckpt /content/stable-diffusion-webui/models/Stable-diffusion/v1-5-pruned-emaonly.ckpt
 
 EXPOSE 7860
 
